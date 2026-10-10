@@ -1,17 +1,17 @@
 {
   "url": "https://zmmmm77.github.io",
-  "title": "Portfolio",
-  "description": "Personal portfolio — coming soon.",
+  "title": "罗梓铭 Ziming Luo",
+  "description": "罗梓铭的个人网站：机器人产品、工程与研究经历。",
   "showPlaceholders": true,
   "allowIndexing": false,
   "sections": [
-    { "id": "about", "title": "About", "enabled": true },
-    { "id": "work", "title": "Work Experience", "enabled": true },
-    { "id": "education", "title": "Education", "enabled": true },
-    { "id": "research", "title": "Research", "enabled": true },
-    { "id": "skills", "title": "Skills", "enabled": true },
-    { "id": "projects", "title": "My Projects", "enabled": true },
-    { "id": "interests", "title": "Beyond Work", "enabled": true },
-    { "id": "contact", "title": "Contact", "enabled": true }
+    { "id": "about", "title": "关于我", "enabled": true },
+    { "id": "work", "title": "实习与实践", "enabled": true },
+    { "id": "education", "title": "教育经历", "enabled": true },
+    { "id": "research", "title": "科研经历", "enabled": true },
+    { "id": "skills", "title": "技能", "enabled": true },
+    { "id": "projects", "title": "项目案例", "enabled": true },
+    { "id": "interests", "title": "工作之外", "enabled": true },
+    { "id": "contact", "title": "联系我", "enabled": true }
   ]
 }

@@ -1,16 +1,67 @@
 {
-  "name": "",
-  "initials": "",
-  "description": "",
-  "summary": "",
+  "name": "罗梓铭",
+  "initials": "ZL",
+  "description": "Ziming Luo · UPenn MEAM 硕士在读 · 机器人产品与工程",
+  "summary": "目前在宾夕法尼亚大学攻读机械工程与应用力学硕士。本科就读于宁波诺丁汉大学机械工程专业，期间赴英国 University of Nottingham 交换一学期。我关注机器人从控制与算法、机电系统原型，到真实场景中的产品定义与落地。曾在自变量机器人参与机器人产品需求、场景试运行和功能验证。",
   "avatarUrl": "",
   "resumeUrl": "",
-  "email": "",
-  "social": [],
-  "work": [],
-  "education": [],
-  "research": [],
-  "skills": [],
+  "email": "luo7@seas.upenn.edu",
+  "social": [
+    { "label": "LinkedIn", "url": "https://www.linkedin.com/in/xxxluo17" },
+    { "label": "GitHub", "url": "https://github.com/ZMMMM77" }
+  ],
+  "work": [
+    {
+      "title": "自变量机器人（深圳）有限公司",
+      "subtitle": "产品经理实习生",
+      "dates": "2026.06 — 2026.09",
+      "logoText": "X²",
+      "description": "参与机器人办公室服务场景的任务流程、SOP 与需求梳理，并跟进试运行反馈。参与 QUANXTA Zero 系列低光采集功能定义、规格验证，以及产品资料与上市支持。"
+    },
+    {
+      "title": "宁波诺丁汉大学方程式赛车队",
+      "subtitle": "机械组成员",
+      "dates": "2024.08 — 2025.06",
+      "logoText": "FSAE",
+      "description": "参与高压模块、举升系统及链轮防护罩的结构设计、建模和装配验证，并参与关键部件的加工、装配与调试。"
+    }
+  ],
+  "education": [
+    {
+      "title": "宾夕法尼亚大学 University of Pennsylvania",
+      "subtitle": "机械工程与应用力学硕士 · MEAM, MSE",
+      "dates": "2025.08 — 至今",
+      "logoText": "PENN",
+      "description": "预计 2027.06 毕业。课程涉及机电系统、机器人控制与优化、机器人学、机器学习与机器人视觉。",
+      "href": "https://catalog.upenn.edu/graduate/programs/mechanical-engineering-applied-mechanics-mse/"
+    },
+    {
+      "title": "宁波诺丁汉大学 UNNC",
+      "subtitle": "机械工程学士 · BEng Mechanical Engineering",
+      "dates": "2021.09 — 2025.06",
+      "logoText": "UNNC",
+      "description": "本科机械工程专业，获得院长奖学金；本科期间赴 University of Nottingham 英国校区交换一学期。",
+      "href": "https://www.nottingham.edu.cn/en/Study-with-us/Undergraduate/Courses/Prospectus.aspx?id=e77d9670-0ff3-49ec-99ce-16ebf46d3e39&language=en-GB"
+    },
+    {
+      "title": "诺丁汉大学 University of Nottingham",
+      "subtitle": "本科交换 · 一学期",
+      "dates": "UNNC 本科期间",
+      "logoText": "UoN",
+      "description": "赴英国校区交换学习。这段经历属于 UNNC 本科学位的一部分。",
+      "href": "https://www.nottingham.ac.uk/"
+    }
+  ],
+  "research": [
+    {
+      "title": "英属哥伦比亚大学 University of British Columbia",
+      "subtitle": "机器视觉研究项目 · 指导教师 Sheldon Green",
+      "dates": "2024.06 — 2024.09",
+      "logoText": "UBC",
+      "description": "搭建带电颗粒喷涂与图像采集平台，使用 Python / OpenCV 进行图像配准、沉积区域定位和批量定量分析。项目细节与成果展示待补充。"
+    }
+  ],
+  "skills": ["机器人产品需求", "PRD", "ROS 2", "MuJoCo", "Gazebo", "Python", "C++", "PyTorch", "OpenCV", "SolidWorks", "Figma", "SAC / HER", "PID"],
   "projects": [],
   "interests": []
 }

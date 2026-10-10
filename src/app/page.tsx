@@ -44,14 +44,18 @@ function ExperienceRows({ items }: { items: Experience[] }) {
     <div className="space-y-6">
       {items.map((item, i) => (
         <details key={i} className="group">
-          <summary className="flex cursor-pointer list-none items-center gap-3">
+          <summary className="flex cursor-pointer list-none items-center gap-3 rounded-lg py-1 transition-colors hover:bg-muted/50 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring">
             <div className="size-10 shrink-0 overflow-hidden rounded-full border bg-muted/40 p-1">
-              {item.logoUrl && (
+              {item.logoUrl ? (
                 <img
                   src={item.logoUrl}
                   alt=""
                   className="size-full object-contain"
                 />
+              ) : (
+                <span className="flex size-full items-center justify-center text-[10px] font-semibold text-muted-foreground">
+                  {item.logoText || item.title.slice(0, 1)}
+                </span>
               )}
             </div>
             <div className="min-w-0 flex-1">
@@ -65,9 +69,19 @@ function ExperienceRows({ items }: { items: Experience[] }) {
               {item.dates}
             </span>
           </summary>
-          <p className="mt-3 ml-13 whitespace-pre-line text-sm leading-relaxed text-muted-foreground">
-            {item.description}
-          </p>
+          <div className="mt-3 ml-13 space-y-2 text-sm leading-relaxed text-muted-foreground">
+            {item.description && <p className="whitespace-pre-line">{item.description}</p>}
+            {item.href && (
+              <a
+                href={item.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1 font-medium text-foreground underline underline-offset-4"
+              >
+                查看学校官网 <ArrowUpRight className="size-3.5" aria-hidden="true" />
+              </a>
+            )}
+          </div>
         </details>
       ))}
     </div>
@@ -146,7 +160,7 @@ function Content({ id, title }: { id: string; title: string }) {
   if (id === "projects")
     return (
       <>
-        <SectionHeading badge={title} title="Selected projects" />
+        <SectionHeading badge={title} title="精选项目" />
         <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
           {profile.projects.length
             ? profile.projects.map((project, i) => (
@@ -222,7 +236,7 @@ function Content({ id, title }: { id: string; title: string }) {
   if (id === "interests")
     return (
       <>
-        <SectionHeading badge={title} title="Interests & life" />
+        <SectionHeading badge={title} title="兴趣与生活" />
         <div className="ml-5 space-y-8 border-l pl-7">
           {profile.interests.length
             ? profile.interests.map((item, i) => (
@@ -255,7 +269,7 @@ function Content({ id, title }: { id: string; title: string }) {
           {title}
         </span>
         <h2 className="mb-5 text-3xl font-bold tracking-tighter sm:text-5xl">
-          Get in touch
+          欢迎联系
         </h2>
         {profile.email ? (
           <a
@@ -294,7 +308,7 @@ export default function Page() {
       >
         <div className="order-2 flex min-w-0 flex-1 flex-col gap-3 md:order-1">
           <h1 className="text-3xl font-semibold tracking-tighter sm:text-4xl lg:text-5xl">
-            Hi, I&apos;m {profile.name || "…"}
+            你好，我是{profile.name || "…"}
           </h1>
           {profile.description ? (
             <p className="text-muted-foreground md:text-lg lg:text-xl">

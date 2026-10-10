@@ -7,6 +7,8 @@ export type Experience = {
   dates: string;
   description?: string;
   logoUrl?: string;
+  logoText?: string;
+  href?: string;
 };
 export type Project = {
   title: string;
