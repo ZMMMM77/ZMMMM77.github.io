@@ -272,6 +272,17 @@ function Content({ id, title }: { id: string; title: string }) {
         <span className="absolute -top-4 left-1/2 -translate-x-1/2 rounded-xl border bg-primary px-4 py-1 text-sm text-primary-foreground">
           {title}
         </span>
+        <div className="mb-5 flex flex-wrap justify-center gap-x-5 gap-y-2 text-sm text-muted-foreground">
+          {profile.phones.map((phone) => (
+            <a
+              key={phone.href}
+              href={phone.href}
+              className="underline underline-offset-4 hover:text-foreground"
+            >
+              {phone.label}
+            </a>
+          ))}
+        </div>
         <h2 className="mb-5 text-3xl font-bold tracking-tighter sm:text-5xl">
           欢迎联系
         </h2>

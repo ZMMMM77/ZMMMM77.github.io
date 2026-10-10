@@ -27,6 +27,7 @@ export type Profile = {
   avatarUrl: string;
   resumeUrl: string;
   email: string;
+  phones: { label: string; href: string }[];
   social: { label: string; url: string }[];
   work: Experience[];
   education: Experience[];

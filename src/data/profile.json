@@ -6,6 +6,10 @@
   "avatarUrl": "",
   "resumeUrl": "",
   "email": "luo7@seas.upenn.edu",
+  "phones": [
+    { "label": "+86 15377076577", "href": "tel:+8615377076577" },
+    { "label": "+1 2152520082", "href": "tel:+12152520082" }
+  ],
   "social": [
     { "label": "LinkedIn", "url": "https://www.linkedin.com/in/xxxluo17" },
     { "label": "GitHub", "url": "https://github.com/ZMMMM77" }
