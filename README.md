@@ -17,7 +17,7 @@ The blank framework uses static placeholder shapes, not a loading indicator. Kee
 
 ### Content format
 
-Work, education and research use arrays of objects with `title`, `subtitle`, `dates`, and optional `description` and `logoUrl` fields. Projects use `title`, `description`, `dates`, `tags` (array of strings), and optional `image` and `href`. Interests use `title` and `description`. Social links use `label` and `url`. Leave arrays empty until ready.
+Work, education and research use arrays of objects with `title`, `subtitle`, `dates`, and optional `description`, `logoUrl`, `logoText`, and `href` fields. Clicking a row expands its description; education rows with `href` show a school website link. Projects use `title`, `description`, `dates`, `tags` (array of strings), and optional `image` and `href`. Interests use `title` and `description`. Social links use `label` and `url`. Leave arrays empty until ready.
 
 ## Local development
 
