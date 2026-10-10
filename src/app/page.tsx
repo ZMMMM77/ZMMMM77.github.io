@@ -1,5 +1,8 @@
 /* eslint-disable @next/next/no-img-element */
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import BlurFade from "@/components/magicui/blur-fade";
+import { BorderBeam } from "@/components/magicui/border-beam";
+import { MagicCard } from "@/components/magicui/magic-card";
 import { profile, site, type Experience } from "@/data/profile";
 import {
   ArrowUpRight,
@@ -164,71 +167,72 @@ function Content({ id, title }: { id: string; title: string }) {
         <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
           {profile.projects.length
             ? profile.projects.map((project, i) => (
-                <article key={i} className="overflow-hidden rounded-xl border">
-                  {project.image ? (
-                    <img
-                      src={project.image}
-                      alt={project.title}
-                      className="h-48 w-full object-cover"
-                    />
-                  ) : (
-                    <div className="h-48 bg-muted" />
-                  )}
-                  <div className="space-y-3 p-6">
-                    <h3 className="font-semibold">
-                      {project.href ? (
-                        <a
-                          href={project.href}
-                          className="inline-flex items-center gap-2"
-                        >
-                          {project.title}
-                          <ArrowUpRight className="size-4" />
-                        </a>
-                      ) : (
-                        project.title
-                      )}
-                    </h3>
-                    <p className="text-xs text-muted-foreground">
-                      {project.dates}
-                    </p>
-                    <p className="text-sm leading-relaxed text-muted-foreground">
-                      {project.description}
-                    </p>
-                    <div className="flex flex-wrap gap-1">
-                      {project.tags.map((tag) => (
-                        <span
-                          key={tag}
-                          className="rounded-md border px-2 py-1 text-xs"
-                        >
-                          {tag}
-                        </span>
-                      ))}
+                <MagicCard key={i}>
+                  <article className="h-full">
+                    {project.image ? (
+                      <img
+                        src={project.image}
+                        alt={project.title}
+                        className="h-48 w-full object-cover"
+                      />
+                    ) : (
+                      <div className="h-48 bg-muted" />
+                    )}
+                    <div className="space-y-3 p-6">
+                      <h3 className="font-semibold">
+                        {project.href ? (
+                          <a
+                            href={project.href}
+                            className="inline-flex items-center gap-2"
+                          >
+                            {project.title}
+                            <ArrowUpRight className="size-4" />
+                          </a>
+                        ) : (
+                          project.title
+                        )}
+                      </h3>
+                      <p className="text-xs text-muted-foreground">
+                        {project.dates}
+                      </p>
+                      <p className="text-sm leading-relaxed text-muted-foreground">
+                        {project.description}
+                      </p>
+                      <div className="flex flex-wrap gap-1">
+                        {project.tags.map((tag) => (
+                          <span
+                            key={tag}
+                            className="rounded-md border px-2 py-1 text-xs"
+                          >
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
                     </div>
-                  </div>
-                </article>
+                  </article>
+                  {i === 0 && <BorderBeam />}
+                </MagicCard>
               ))
             : empty &&
               Array.from({ length: 2 }, (_, i) => (
-                <div
-                  key={i}
-                  className="overflow-hidden rounded-xl border"
-                  aria-label="项目待添加"
-                >
-                  <div className="flex h-48 items-center justify-center bg-muted/50">
-                    <ImageIcon
-                      className="size-8 text-muted-foreground/25"
-                      strokeWidth={1}
-                      aria-hidden="true"
-                    />
-                  </div>
-                  <div className="space-y-5 p-6">
-                    <Lines count={3} />
-                    <div className="flex gap-2" aria-hidden="true">
-                      <span className="h-5 w-14 rounded-md border" />
-                      <span className="h-5 w-20 rounded-md border" />
+                <MagicCard key={i}>
+                  <div aria-label="项目待添加">
+                    <div className="flex h-48 items-center justify-center bg-muted/50">
+                      <ImageIcon
+                        className="size-8 text-muted-foreground/25"
+                        strokeWidth={1}
+                        aria-hidden="true"
+                      />
+                    </div>
+                    <div className="space-y-5 p-6">
+                      <Lines count={3} />
+                      <div className="flex gap-2" aria-hidden="true">
+                        <span className="h-5 w-14 rounded-md border" />
+                        <span className="h-5 w-20 rounded-md border" />
+                      </div>
                     </div>
                   </div>
-                </div>
+                </MagicCard>
               ))}
         </div>
       </>
@@ -302,54 +306,60 @@ function Content({ id, title }: { id: string; title: string }) {
 export default function Page() {
   return (
     <main id="main" className="relative flex min-h-dvh flex-col gap-14">
-      <section
-        id="hero"
-        className="flex flex-col justify-between gap-6 md:flex-row"
-      >
-        <div className="order-2 flex min-w-0 flex-1 flex-col gap-3 md:order-1">
-          <h1 className="text-3xl font-semibold tracking-tighter sm:text-4xl lg:text-5xl">
-            你好，我是{profile.name || "…"}
-          </h1>
-          {profile.description ? (
-            <p className="text-muted-foreground md:text-lg lg:text-xl">
-              {profile.description}
-            </p>
-          ) : (
-            <div className="max-w-sm space-y-4 pt-1">
-              <p className="text-sm text-muted-foreground">内容待添加</p>
-              <Lines count={2} />
-            </div>
-          )}
-          {profile.resumeUrl && (
-            <a
-              href={profile.resumeUrl}
-              className="mt-2 inline-flex w-fit items-center gap-2 rounded-lg border px-3 py-2 text-sm"
-              download
-            >
-              <FileDown className="size-4" />
-              下载简历
-            </a>
-          )}
-        </div>
-        <Avatar className="order-1 size-24 shrink-0 rounded-full border shadow-lg ring-4 ring-muted md:order-2 md:size-32">
-          {profile.avatarUrl && (
-            <AvatarImage alt={profile.name} src={profile.avatarUrl} />
-          )}
-          <AvatarFallback>
-            {profile.initials || (
-              <UserRound
-                className="size-10 text-muted-foreground/30"
-                strokeWidth={1}
-              />
+      <section id="hero">
+        <BlurFade
+          className="flex flex-col justify-between gap-6 md:flex-row"
+          duration={0.45}
+          yOffset={8}
+          blur="3px"
+        >
+          <div className="order-2 flex min-w-0 flex-1 flex-col gap-3 md:order-1">
+            <h1 className="text-3xl font-semibold tracking-tighter sm:text-4xl lg:text-5xl">
+              你好，我是{profile.name || "…"}
+            </h1>
+            {profile.description ? (
+              <p className="text-muted-foreground md:text-lg lg:text-xl">
+                {profile.description}
+              </p>
+            ) : (
+              <div className="max-w-sm space-y-4 pt-1">
+                <p className="text-sm text-muted-foreground">内容待添加</p>
+                <Lines count={2} />
+              </div>
             )}
-          </AvatarFallback>
-        </Avatar>
+            {profile.resumeUrl && (
+              <a
+                href={profile.resumeUrl}
+                className="mt-2 inline-flex w-fit items-center gap-2 rounded-lg border px-3 py-2 text-sm"
+                download
+              >
+                <FileDown className="size-4" />
+                下载简历
+              </a>
+            )}
+          </div>
+          <Avatar className="order-1 size-24 shrink-0 rounded-full border shadow-lg ring-4 ring-muted md:order-2 md:size-32">
+            {profile.avatarUrl && (
+              <AvatarImage alt={profile.name} src={profile.avatarUrl} />
+            )}
+            <AvatarFallback>
+              {profile.initials || (
+                <UserRound
+                  className="size-10 text-muted-foreground/30"
+                  strokeWidth={1}
+                />
+              )}
+            </AvatarFallback>
+          </Avatar>
+        </BlurFade>
       </section>
       {site.sections
         .filter((section) => section.enabled)
         .map((section) => (
           <section key={section.id} id={section.id} className="scroll-mt-8">
-            <Content id={section.id} title={section.title} />
+            <BlurFade inView duration={0.4} yOffset={8} blur="3px">
+              <Content id={section.id} title={section.title} />
+            </BlurFade>
           </section>
         ))}
     </main>

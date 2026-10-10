@@ -15,6 +15,8 @@ Website: https://zmmmm77.github.io/
 
 The blank framework uses static placeholder shapes, not a loading indicator. Keep `showPlaceholders` true while preparing content. Set it to false when ready. `allowIndexing` defaults to false until the site contains real content; it is not access control.
 
+Sections reveal gently as they enter the viewport. Project cards have a mouse-hover spotlight; the first real project also gets a subtle border beam. Empty project placeholders do not show the beam. Reduced-motion preferences suppress the continuous beam and section reveal; the static page remains readable without JavaScript.
+
 ### Content format
 
 Work, education and research use arrays of objects with `title`, `subtitle`, `dates`, and optional `description`, `logoUrl`, `logoText`, and `href` fields. Clicking a row expands its description; education rows with `href` show a school website link. Projects use `title`, `description`, `dates`, `tags` (array of strings), and optional `image` and `href`. Interests use `title` and `description`. Social links use `label` and `url`. Leave arrays empty until ready.

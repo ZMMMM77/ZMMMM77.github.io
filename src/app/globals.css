@@ -249,9 +249,21 @@ body { overflow-wrap: anywhere; }
   opacity: 0.25;
   mask-image: linear-gradient(to bottom, black, transparent);
 }
-#main > section { animation: section-enter 0.45s ease-out both; }
-@keyframes section-enter { from { opacity: 0.6; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
+#hero > div { animation: hero-enter 0.45s ease-out both; }
+@keyframes hero-enter { from { opacity: 0.65; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+.magic-card-glow { opacity: 0; transition: opacity 0.25s ease; }
+@media (hover: hover) and (pointer: fine) {
+  .magic-card:hover .magic-card-glow { opacity: 1; }
+}
+.border-beam {
+  padding: 1px;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+}
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation: none !important; transition: none !important; }
+  .border-beam { display: none; }
 }
