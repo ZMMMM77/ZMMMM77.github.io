@@ -1,0 +1,17 @@
+{
+  "url": "https://zmmmm77.github.io",
+  "title": "Portfolio",
+  "description": "Personal portfolio — coming soon.",
+  "showPlaceholders": true,
+  "allowIndexing": false,
+  "sections": [
+    { "id": "about", "title": "About", "enabled": true },
+    { "id": "work", "title": "Work Experience", "enabled": true },
+    { "id": "education", "title": "Education", "enabled": true },
+    { "id": "research", "title": "Research", "enabled": true },
+    { "id": "skills", "title": "Skills", "enabled": true },
+    { "id": "projects", "title": "My Projects", "enabled": true },
+    { "id": "interests", "title": "Beyond Work", "enabled": true },
+    { "id": "contact", "title": "Contact", "enabled": true }
+  ]
+}
